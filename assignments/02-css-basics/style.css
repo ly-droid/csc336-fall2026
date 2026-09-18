@@ -1,0 +1,83 @@
+/* Element selectors style the main parts of the page. */
+body {
+    margin: 0;
+    background-color: #f6f1e9;
+    color: #302b26;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+header {
+    padding: 24px 16px;
+    background-color: #e7d5bf;
+    text-align: center;
+}
+
+main {
+    max-width: 960px;
+    margin: 24px auto;
+    padding: 0 20px;
+}
+
+p {
+    margin: 12px 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 24px;
+    border-radius: 12px;
+}
+
+/* This ID belongs to the page's one main heading. */
+#main-title {
+    margin: 0;
+    font-size: 36px;
+}
+
+/* Flexbox arranges the cards and lets them wrap on small screens. */
+section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 24px 0;
+}
+
+/* Each of these three classes is used on three elements. */
+.card {
+    flex: 1 1 220px;
+    padding: 20px;
+    border: 1px solid #bba88f;
+    border-radius: 12px;
+    background-color: #ffffff;
+}
+
+.card-title {
+    margin: 0 0 12px;
+    color: #65442c;
+    font-size: 22px;
+}
+
+.description {
+    margin: 0;
+    line-height: 1.7;
+}
+
+a {
+    color: #694126;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #302b26;
+    background-color: #e7d5bf;
+}
+
+footer {
+    padding: 16px;
+    text-align: center;
+    background-color: #e7d5bf;
+}
