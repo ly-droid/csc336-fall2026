@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <title>9-22-26</title>
+</head>
+
+<body>
+    <div id="root"> </div>
+    <script>
+        //1. Getting an element
+        let rootDiv = document.querySelector("#root");
+
+        function addHeadingToElement(element, text) {
+            //2. Create an HTML element via code
+            let newDiv = document.createElement("h1");
+            newDiv.innerHTML = text;
+
+            //3. Add new element to the DOM
+            element.append(newDiv);
+        }
+
+        //Call the function that adds it to the root div
+        addHeadingToElement(rootDiv, "Hello World");
+        addHeadingToElement(rootDiv, "Goodbye World");
+
+    </script>
+</body>
+
+</html>

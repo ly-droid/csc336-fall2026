@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <title>Shrudle</title>
+    <style>
+        #root {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script>
+        //pokemon data
+        let allPokemon = [];
+        let pokemon = {};
+        pokemon.name = "Pikachu";
+        pokemon.description = "the lightning one";
+        pokemon.img = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png";
+        allPokemon.push(pokemon);
+
+        allPokemon.push({
+            name: "Bulbasaur",
+            description: "the grass one",
+            img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+        });
+
+        function addPokemonToRoot(pokemon) {
+            //1. Get the root div
+            let rootDiv = document.querySelector("#root");
+
+            let pokemonDiv = document.createElement("div");
+            pokemonDiv.classList.add("pokemonData");
+
+            let infoDiv = document.createElement("div");
+
+            let nameHeading = document.createElement("h1");
+            nameHeading.innerHTML = pokemon.name;
+            infoDiv.append(nameHeading);
+
+            let descriptionParagraph = document.createElement("p");
+            descriptionParagraph.innerHTML = pokemon.description;
+            infoDiv.append(descriptionParagraph);
+
+            pokemonDiv.append(infoDiv);
+
+            let imageElement = document.createElement("img");
+            imageElement.src = pokemon.img;
+
+            rootDiv.append(pokemonDiv);
+        }
+        addPokemonToRoot(allPokemon[0]);
+    </script>
+</body>
+
+</html>
