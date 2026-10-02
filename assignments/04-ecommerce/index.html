@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Leaf & Light | A little greener</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="./">leaf & light<span>PLANTS FOR EVERYDAY SPACES</span></a>
+        <span class="header-note">A little green goes a long way.</span>
+    </header>
+
+    <main>
+        <section class="intro" aria-labelledby="page-title">
+            <div>
+                <p class="eyebrow">MAKE ROOM FOR SOMETHING GOOD</p>
+                <h1 id="page-title">A little greener.<br>A little happier.</h1>
+                <p>Windowsill companions, leafy statement pieces, and easy growers.<br>Find a little life for your corner of the world.</p>
+            </div>
+            <div class="intro-note"><span>GROW AT YOUR OWN PACE</span><p>Small beginnings.<br>Beautiful things.</p><span>THE EVERYDAY COLLECTION / 01</span></div>
+        </section>
+
+        <div class="shop-layout">
+            <section class="catalog" aria-labelledby="catalog-title">
+                <div class="section-heading"><h2 id="catalog-title">Meet your new plants</h2><span id="result-count"></span></div>
+                <div class="toolbar">
+                    <div class="filter-control"><label for="category-filter">Browse by</label><select id="category-filter">
+                        <option value="all">All plants</option>
+                        <option value="Easy care">Easy care</option>
+                        <option value="Statement">Statement</option>
+                        <option value="Trailing">Trailing</option>
+                    </select></div>
+                    <div class="filter-control"><label for="sort-order">Sort by</label><select id="sort-order">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: low to high</option>
+                        <option value="price-high">Price: high to low</option>
+                        <option value="name">Name: A–Z</option>
+                    </select></div>
+                </div>
+                <div class="selection-bar"><p>Build your own little jungle.<span>Selections stay checked when you filter.</span></p><button id="add-selected" type="button" disabled>Add Selected to Cart</button></div>
+                <div id="products" class="product-grid"></div>
+            </section>
+
+            <aside class="cart" aria-labelledby="cart-title">
+                <div class="section-heading"><h2 id="cart-title">Your cart</h2><span id="cart-count" class="count-badge">0</span></div>
+                <p class="cart-subtitle">Good things are growing here.</p>
+                <div id="cart-items"></div>
+                <div id="cart-total" class="cart-total"></div>
+                <p class="cart-note">A practice storefront. No checkout or payment.<br>Your cart resets when you refresh.</p>
+            </aside>
+        </div>
+        <p id="status" class="status" role="status" aria-live="polite" aria-atomic="true">Welcome in. Find your next leafy companion.</p>
+    </main>
+    <footer><span>leaf & light</span><span>A little life, wherever you live.</span><span>CSC336 / ASSIGNMENT 04</span></footer>
+    <script src="script.js"></script>
+</body>
+</html>
