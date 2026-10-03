@@ -53,7 +53,9 @@ button:disabled { color: #67715f; border-color: #d1d6c6; background: #e0e4d8; cu
 .product-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
 .product-card { display: flex; flex-direction: column; min-width: 0; overflow: hidden; border: 2px solid #e0e2d7; border-radius: 9px; background: white; }
 .product-card.selected { border-color: #517039; background: #f2f6e9; }
-.product-image { display: block; width: 100%; height: auto; aspect-ratio: 6 / 4.4; object-fit: cover; }
+.product-image { display: block; width: 100%; height: auto; aspect-ratio: 6 / 4.4; object-fit: contain; background: #efeee8; }
+.photo-credit { margin: 12px 0 0; color: #647060; font-size: 9px; line-height: 1.5; }
+.photo-credit a { color: inherit; }
 .product-info { display: flex; flex: 1; flex-direction: column; padding: 14px; }
 .select-product { display: flex; align-items: center; gap: 7px; margin-bottom: 12px; color: #5c675a; font-size: 11px; cursor: pointer; }
 .select-product input { width: 16px; height: 16px; margin: 0; accent-color: #3f5e35; cursor: pointer; }
