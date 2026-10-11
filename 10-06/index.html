@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title>My Page</title>
+</head>
+
+<body>
+    <script>
+        function printCount() {
+            let count = 0;
+
+            function print() {
+                console.log(count);
+                count++;
+            }
+            return print;
+        }
+        let printA = printCount();
+        printA(); // Output: 0
+        printA(); // Output: 1
+        printA(); // Output: 2
+        let printB = printCount();
+        printB(); // Output: 0
+        printA(); // Output: 3
+    </script>
+</body>
+
+</html>

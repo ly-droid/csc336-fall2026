@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Leaf & Light | Inventory Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="./">leaf & light<span>PLANTS FOR EVERYDAY SPACES</span></a>
+        <span class="header-note">THE OWNER’S WORKSPACE</span>
+    </header>
+
+    <main>
+        <section class="intro" aria-labelledby="page-title">
+            <div>
+                <p class="eyebrow">YOUR STORE. ROOM TO GROW.</p>
+                <h1 id="page-title">Grow your catalog.<br>Keep it blooming.</h1>
+                <p>Add a new plant, then try it in the storefront below.<br>Your catalog stays saved in this browser when you refresh.</p>
+            </div>
+            <div class="intro-note"><span>GROW AT YOUR OWN PACE</span><p>Small beginnings.<br>Beautiful things.</p><span>THE EVERYDAY COLLECTION / 01</span></div>
+        </section>
+
+        <section class="inventory-panel" aria-labelledby="inventory-title">
+            <div class="inventory-heading">
+                <div><p class="eyebrow">TEND YOUR COLLECTION</p><h2 id="inventory-title">Add New Product</h2></div>
+                <button id="reset-store" class="reset-button" type="button">Reset Store</button>
+            </div>
+            <p class="form-note">All five fields are required. Each product needs a unique name. Reset Store restores the six starter plants and empties the cart.</p>
+            <form id="product-form">
+                <div class="form-grid">
+                    <div class="form-field"><label for="product-name">Product name</label><input id="product-name" name="name" type="text" placeholder="e.g. Bird of Paradise" required></div>
+                    <div class="form-field"><label for="product-price">Price ($)</label><input id="product-price" name="price" type="number" min="0.01" step="0.01" placeholder="29.95" required></div>
+                    <div class="form-field"><label for="product-category">Category</label><select id="product-category" name="category" required>
+                        <option value="">Choose a category</option>
+                        <option value="Easy care">Easy care</option>
+                        <option value="Statement">Statement</option>
+                        <option value="Trailing">Trailing</option>
+                    </select></div>
+                    <div class="form-field description-field"><label for="product-description">Description</label><textarea id="product-description" name="description" rows="3" placeholder="Tell shoppers a little about this plant." required></textarea></div>
+                    <div class="form-field"><label for="product-image">Image URL</label><input id="product-image" name="image" type="url" placeholder="https://example.com/plant.jpg" required><p class="field-hint">Paste a direct link to a plant photo.</p></div>
+                </div>
+                <div class="form-actions"><button type="submit">Add Product</button><p id="form-message" role="status" aria-live="polite" aria-atomic="true">Ready for something new.</p></div>
+            </form>
+            <p id="storage-message" class="storage-message" role="status" aria-live="polite"></p>
+        </section>
+
+        <div class="shop-layout">
+            <section class="catalog" aria-labelledby="catalog-title">
+                <div class="section-heading"><h2 id="catalog-title">Meet your new plants</h2><span id="result-count"></span></div>
+                <div class="toolbar">
+                    <div class="filter-control"><label for="category-filter">Browse by</label><select id="category-filter">
+                        <option value="all">All plants</option>
+                        <option value="Easy care">Easy care</option>
+                        <option value="Statement">Statement</option>
+                        <option value="Trailing">Trailing</option>
+                    </select></div>
+                    <div class="filter-control"><label for="sort-order">Sort by</label><select id="sort-order">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: low to high</option>
+                        <option value="price-high">Price: high to low</option>
+                        <option value="name">Name: A–Z</option>
+                    </select></div>
+                </div>
+                <div class="selection-bar"><p>Build your own little jungle.<span>Selections stay checked when you filter.</span></p><button id="add-selected" type="button" disabled>Add Selected to Cart</button></div>
+                <div id="products" class="product-grid"></div>
+            </section>
+
+            <aside class="cart" aria-labelledby="cart-title">
+                <div class="section-heading"><h2 id="cart-title">Your cart</h2><span id="cart-count" class="count-badge">0</span></div>
+                <p class="cart-subtitle">Good things are growing here.</p>
+                <div id="cart-items"></div>
+                <div id="cart-total" class="cart-total"></div>
+                <p class="cart-note">A practice storefront. No checkout or payment.<br>Your cart resets when you refresh.</p>
+            </aside>
+        </div>
+        <p id="status" class="status" role="status" aria-live="polite" aria-atomic="true">Welcome in. Find your next leafy companion.</p>
+    </main>
+    <footer><span>leaf & light</span><span>A little life, wherever you live.</span><span>CSC336 / ASSIGNMENT 05</span></footer>
+    <script src="script.js"></script>
+</body>
+</html>
