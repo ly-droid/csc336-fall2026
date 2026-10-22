@@ -44,7 +44,6 @@ function navButtonClicked(e) {
 
 }
 
-// Display the current room
 function visualizeRoom(room) {
     roomRootDiv.innerHTML = "";
 
