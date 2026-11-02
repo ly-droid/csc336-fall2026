@@ -7,61 +7,40 @@ async function getPokemon(id) {
     return json;
 }
 
-// Change the Pokemon using its API data.
-async function changePokemon(id) {
-    document.querySelector("#pokemonInfo").innerHTML = "Loading...";
-
-    let pokemonData = await getPokemon(id);
-    let pokemonImage = await loadImage(pokemonData.sprites.front_default);
-
-    let hp = pokemonData.stats[0].base_stat;
-    let speed = pokemonData.stats[5].base_stat;
-
-    pokemon = {
-        x: 0,
-        img: pokemonImage,
-        hp: hp,
-        speed: speed,
-        size: hp * 3
-    };
-
-    document.querySelector("#pokemonInfo").innerHTML =
-        "Name: " + pokemonData.name +
-        " | HP: " + hp +
-        " | Speed: " + speed;
-}
-
-// Called when a Pokemon button is clicked.
-function buttonClicked(e) {
-    changePokemon(e.target.innerHTML);
-}
 
 // Set up the canvas and buttons.
+
 async function setup() {
     createCanvas(600, 400);
 
-    await changePokemon("pikachu");
+    let id = 1;
+    let pokemonData = await getPokemon(id);
+    let pokemonImage = await loadImage(pokemonData.sprites.front_default);
 
-    document.querySelector("#pikachuButton").addEventListener("click", buttonClicked);
-    document.querySelector("#charmanderButton").addEventListener("click", buttonClicked);
-    document.querySelector("#bulbasaurButton").addEventListener("click", buttonClicked);
+    pokemon = {
+        x: 100,
+        y: 200,
+        img: pokemonImage,
+        id: id,
+        hp: pokemonData.stats[0].base_stat,
+        speed: pokemonData.stats[5].base_stat
+    };
 }
 
-// Draw the Pokemon and move it across the canvas.
+
+// Draw and move the Pokemon.
 function draw() {
     background(240);
 
-    image(
-        pokemon.img,
-        pokemon.x,
-        (height - pokemon.size) / 2,
-        pokemon.size,
-        pokemon.size
-    );
+    fill(200);
+    noStroke();
+    ellipse(pokemon.x, height / 2, pokemon.hp * 3);
+
+    image(pokemon.img, pokemon.x, height / 2);
 
     pokemon.x += pokemon.speed / 30;
 
     if (pokemon.x > width) {
-        pokemon.x = -pokemon.size;
+        pokemon.x = 0;
     }
 }
