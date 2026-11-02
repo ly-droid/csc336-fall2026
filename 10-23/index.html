@@ -1,0 +1,47 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <div id="timeoutFunctionDiv">Set Timeout hasn't run yet </div>
+    <script>
+        let timeoutDiv = document.querySelector("#timeoutFunctionDiv");
+
+        setTimeout(() => {
+            timeoutDiv.innerHTML = "The function ran!";
+        }, 5000);
+
+        function fakeWait(ms){
+            let savedCallback = null;
+
+            //Define what "resolve"
+            setTimeout(() => {               
+                    savedCallback();
+            }, ms);
+
+            return {
+                then: (callback) => {
+                    savedCallback = callback;
+                }
+            }
+        }
+
+        let wait = fakeWait(2000);
+        wait.then(() => {
+            console.log("The wai fake promise has resolved!");
+        });
+
+        function wait(ms) {
+            return new Promise((resolve) => {
+                setTimeout(() => resolve(), ms);
+            });
+        }
+        wait(4000).then(() => {
+            console.log("The 'real'wait promise has finished waiting!");
+        });
+    </script>
+</body>
+
+</html>

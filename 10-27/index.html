@@ -1,0 +1,29 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <script>
+        let promise = fetch("https://pokeapi.co/api/v2/ability/1000/");
+        promise.then((data) => {
+            console.log("a - fetch promise resolved");
+            return data.json();
+        });
+        promiseResponse.then((json) => {
+            console.log(json);
+            let bodyDiv = document.querySelector("body");
+        });
+        console.log("b - This runs immediately after fetch()");
+
+        async function getPokemon(id) {
+            let response = await fetch("https://pokeapi.co/api/v2/pokemon/" + id);
+            let json = await response.json();
+            console.log(json);
+        }
+        getPokemon(1);
+    </script>
+</body>
+
+</html>
