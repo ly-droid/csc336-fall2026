@@ -1,0 +1,25 @@
+#shop {
+    display: flex;
+    justify-content: space-between;
+}
+
+#catalog {
+    width: 70%;
+}
+
+#cart {
+    width: 25%;
+    background-color: lightgray;
+}
+
+.card {
+    background-color: white;
+}
+
+.card img {
+    width: 20%;
+}
+
+.selected {
+    background-color: lightblue;
+}
