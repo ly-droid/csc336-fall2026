@@ -3,7 +3,7 @@ let products = [
         name: "Notebook",
         price: 5.99,
         description: "A notebook for class.",
-        image: "https://images.unsplash.com/photo-1743385779392-cab22721fac6?w=400&q=80",
+        image: "images/notebook.jpg",
         category: "school",
         selected: false
     },
@@ -11,7 +11,7 @@ let products = [
         name: "Pen",
         price: 2.50,
         description: "A blue writing pen.",
-        image: "https://images.unsplash.com/photo-1709036311069-98e4858a7b53?w=400&q=80",
+        image: "images/pen.jpg",
         category: "school",
         selected: false
     },
@@ -19,7 +19,7 @@ let products = [
         name: "Pencil Case",
         price: 6.99,
         description: "A small pencil case.",
-        image: "https://images.unsplash.com/photo-1574944558125-f8d12f23be89?w=400&q=80",
+        image: "images/pencil-case.jpg",
         category: "school",
         selected: false
     },
@@ -27,7 +27,7 @@ let products = [
         name: "Mug",
         price: 8.99,
         description: "A coffee mug.",
-        image: "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=400&q=80",
+        image: "images/mug.jpg",
         category: "daily",
         selected: false
     },
@@ -35,7 +35,7 @@ let products = [
         name: "Desk Lamp",
         price: 19.99,
         description: "A lamp for your desk.",
-        image: "https://images.unsplash.com/photo-1740204245792-374791da9bf0?w=400&q=80",
+        image: "images/desk-lamp.jpg",
         category: "daily",
         selected: false
     },
@@ -43,7 +43,7 @@ let products = [
         name: "Water Bottle",
         price: 12.99,
         description: "A reusable water bottle.",
-        image: "https://images.unsplash.com/photo-1611190346465-12f6b1ad0c06?w=400&q=80",
+        image: "images/water-bottle.jpg",
         category: "daily",
         selected: false
     }
@@ -74,7 +74,7 @@ function showProduct(product) {
     card.append(name);
 
     let price = document.createElement("p");
-    price.innerHTML = "$" + product.price;
+    price.innerHTML = "$" + product.price.toFixed(2);
     card.append(price);
 
     let description = document.createElement("p");
@@ -155,7 +155,7 @@ function showCart() {
 
         let item = document.createElement("p");
         item.innerHTML =
-            product.name + " - $" + product.price;
+            product.name + " - $" + product.price.toFixed(2);
 
         cartDiv.append(item);
     });
@@ -168,8 +168,8 @@ function showCart() {
     });
     let totalP = document.createElement("p");
     totalP.innerHTML =
-        "Total: $" + total +
-        " (" + cart.length + " items)";
+        "Total: $" + total.toFixed(2) +
+        " (" + cart.length + (cart.length === 1 ? " item)" : " items)");
 
     cartDiv.append(totalP);
 }
