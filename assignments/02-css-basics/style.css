@@ -1,5 +1,50 @@
+#main-title {
+    margin: 0;
+    font-size: 36px;
+}
+
+.card {
+    flex: 1 1 220px;
+    padding: 20px;
+    border: 1px solid #bba88f;
+    border-radius: 12px;
+    background-color: #ffffff;
+}
+
+.card-title {
+    margin: 0 0 12px;
+    color: #65442c;
+    font-size: 22px;
+}
+
+.description {
+    margin: 0;
+    line-height: 1.7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Element selectors style the main parts of the page. */
-body {
+/*body {
     margin: 0;
     background-color: #f6f1e9;
     color: #302b26;
@@ -33,21 +78,21 @@ img {
 }
 
 /* This ID belongs to the page's one main heading. */
-#main-title {
+/*#main-title {
     margin: 0;
     font-size: 36px;
 }
 
 /* Flexbox arranges the cards and lets them wrap on small screens. */
-section {
+/*section {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
     margin: 24px 0;
-}
+}*/
 
 /* Each of these three classes is used on three elements. */
-.card {
+/*.card {
     flex: 1 1 220px;
     padding: 20px;
     border: 1px solid #bba88f;

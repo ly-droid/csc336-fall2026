@@ -7,6 +7,78 @@ let rooms = {
         linkedRooms: [
             { label: "Go to Hallway", destination: "hallway" }
         ]
+    }
+
+    hallway: {
+        name: "Hallway",
+        description: "There are several rooms.",
+        linkedRooms: [
+            { label: "Go to Entrance", destination: "entrance" },
+            { label: "Go to Classroom", destination: "classroom" },
+            { label: "Go to Library", destination: "library" }
+        ]
+    },
+
+    classroom: {
+        name: "Classroom",
+        description: "Many desks and chairs in the classroom.",
+        linkedRooms: [
+            { label: "Go to Hallway", destination: "hallway" }
+        ]
+    },
+
+    library: {
+        name: "Library",
+        description: "Many books on the shelves.",
+        linkedRooms: [
+            { label: "Go to Hallway", destination: "hallway" }
+        ]
+    }
+}
+
+let currentRoom = rooms["entrance"];
+
+function navButtonClicked(e) {
+    currentRoom = rooms[e.]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*let roomRootDiv = document.querySelector("#roomRoot");
+
+let rooms = {
+    entrance: {
+        name: "School Entrance",
+        description: "You are at the entrance of the school.",
+        linkedRooms: [
+            { label: "Go to Hallway", destination: "hallway" }
+        ]
     },
 
     hallway: {
@@ -65,3 +137,4 @@ function visualizeRoom(room) {
 }
 
 visualizeRoom(currentRoom);
+*/
